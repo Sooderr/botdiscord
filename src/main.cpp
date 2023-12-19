@@ -1,6 +1,6 @@
 #include <dpp/dpp.h>
 #include "listeners/ message_listener.h"
-const std::string BOT_TOKEN = "MTEyMjYzMjA0MzY2MzIwNDM4Mg.GYOxF0.JHNAQvKrnQqDdjZ8v0nzue_y9h3o3ctDSenpK4";
+const std::string BOT_TOKEN = "";
 
 
 int main()
