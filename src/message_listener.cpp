@@ -11,10 +11,11 @@ dpp::cluster& bot = *event.from->creator;
         else if(event.values[0] == "givemute")
         {
             event.dialog(givemutevoice(bot,event));
+            return;
         }
          else if (event.values[0] == "exit") {
          bot.message_delete(event.command.msg.id, event.command.channel.id);
         }
-        event.reply(dpp::ir_update_message,message);
+        bot.message_edit(message);
 return;
 }
