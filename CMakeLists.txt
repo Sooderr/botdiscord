@@ -5,10 +5,6 @@ set(BOT_NAME "templatebot")
 
 project(${BOT_NAME})
 aux_source_directory("src" coresrc)
-aux_source_directory("src/selectaction" coresrc)
-aux_source_directory("src/selectaction/givemute/textvoice" coresrc)
-aux_source_directory("src/selectaction/givemute/voice" coresrc)
-aux_source_directory("src/selectaction/unmute" coresrc)
 add_executable(${BOT_NAME} ${coresrc})
 
 string(ASCII 27 Esc)
