@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/botsooder.dir/src/eventselect.cpp.o CMakeFiles/botsooder.dir/src/main.cpp.o -o botsooder  -ldl /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/libdpp.so 

@@ -2,7 +2,7 @@
 #include "listeners/ message_listener.h"
 
 
-const std::string BOT_TOKEN = "MTEyMjYzMjA0MzY2MzIwNDM4Mg.GFTvlM.BVVuc50NKP1MvC7firESW0w8CMDUDOEggWIe48";
+const std::string BOT_TOKEN = "";
 
 
 int main()

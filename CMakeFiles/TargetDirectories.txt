@@ -1,0 +1,3 @@
+/mnt/d/botsooder/botdiscord/CMakeFiles/botsooder.dir
+/mnt/d/botsooder/botdiscord/CMakeFiles/edit_cache.dir
+/mnt/d/botsooder/botdiscord/CMakeFiles/rebuild_cache.dir
