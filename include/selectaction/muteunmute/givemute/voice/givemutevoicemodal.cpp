@@ -71,7 +71,7 @@ dpp::interaction_modal_response givemutevoice(dpp::cluster& bot, const dpp::sele
         /* Trigger the dialog box. All dialog boxes are ephemeral */
         return modal;
     }
-bot.on_form_submit([&bot](const dpp::form_submit_t& event) {
+    bot.on_form_submit([&bot](const dpp::form_submit_t& event) {
         dpp::message message = event.command.msg; // это все нормально, так и должно быть
         if (message.embeds.empty()) {
             std::cout << "10 ballsacks" << std::endl;
@@ -85,28 +85,26 @@ bot.on_form_submit([&bot](const dpp::form_submit_t& event) {
         std::cout << event.components.size() << ' ' << event.components[1].components.size() << std::endl;
 
         std::string reason = std::get <std::string>(event.components[0].components[0].value);
-        std::string durations = std::get <std::string>(event.components[1].components[0].value);
+        std::string duration = std::get <std::string>(event.components[1].components[0].value);
 
-        std::cout << reason << ' ' << durations << std::endl;
+        std::cout << reason << ' ' << duration << std::endl;
 
-        long long actual_durations = time_seconds(durations);
+        long long actual_duration = time_seconds(duration);
 
-        if (time_seconds(durations)) {
+        if (actual_duration) {
             const dpp::snowflake rolemutevoice = 1066588600046735430;
             bot.guild_member_add_role(event.command.guild_id, userid, rolemutevoice);
             bot.start_timer([&bot, event, userid, rolemutevoice](dpp::timer h) {
-            bot.guild_member_remove_role(event.command.guild_id, userid, rolemutevoice);
-            bot.stop_timer(h);
-            }, actual_durations);
+                bot.guild_member_remove_role(event.command.guild_id, userid, rolemutevoice);
 
-
+                bot.stop_timer(h);
+            }, actual_duration);
             event.reply(dpp::message("I like being raped 24/7"));
-            bot.direct_message_create((dpp::snowflake)userid, dpp::message(u8"Привет долбоебик!\nТебя замутили на " + std::to_string(actual_durations) + u8" секунд, ес хош то сам переводи, мне впабло. Все пока, мне пора идти хуи сосать. А, вот, причина:```" + reason + "```"));
-        
+            bot.direct_message_create((dpp::snowflake)userid, dpp::message(u8"Привет долбоебик!\nТебя замутили на " + std::to_string(actual_duration) + u8" секунд, ес хош то сам переводи, мне впабло. Все пока, мне пора идти хуи сосать. А, вот, причина:```" + reason + "```"));
         }
         else {
             event.reply(dpp::message("I aint got balls and im not castrated, im just a female"));
         }
-        });
+    });
 
 }
